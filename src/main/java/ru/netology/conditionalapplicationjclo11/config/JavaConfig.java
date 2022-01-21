@@ -11,7 +11,7 @@ import ru.netology.conditionalapplicationjclo11.systemProfile.SystemProfile;
 public class JavaConfig {
 
     @Bean(name = "devProfile")
-    @ConditionalOnProperty(prefix = "netology", name = "profile", havingValue = "true")
+    @ConditionalOnProperty(prefix = "netology", name = "profile", havingValue = "true", matchIfMissing = true)
     public SystemProfile devProfile() {
         return new DevProfile();
     }
